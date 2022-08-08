@@ -7,7 +7,7 @@ public class Contacts {
     private String firstName;
     private String lastName;
     private String address;
-    private String city;
+    String city;
     private String state;
     private int zip;
     private int phoneNumber;
