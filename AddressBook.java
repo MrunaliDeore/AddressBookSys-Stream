@@ -3,11 +3,14 @@ package Stream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.*;
 import java.util.*;
 
 
 public class AddressBook {
+	private static Collection<Contacts> list;
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to address book system");
 		System.out.println("-------------------------------");       
@@ -22,7 +25,7 @@ public class AddressBook {
 		newContact.add(new Contacts("pooja","pawar","DFHHJ","Mumbai","Mharashtra",8888,919874561,"neha@gmail.com"));
 		newContact.add(new Contacts("mrunali","Deore","GRoad","Nashik","Mharashtra",123,919874561,"mru@gmail.com"));
 
-		//by using foreach print all list separately
+		//by using for each print all list separately
 		newContact.forEach(str->System.out.println(str));
 
 		//by using distinct no duplicate entry will print
@@ -44,6 +47,14 @@ public class AddressBook {
 				.findAny()
 				.orElse(null);
 		System.out.println(person);
+		
+		//get count by city
+		System.out.println("\nGet count of number of person by city : ");
+		long count = newContact
+				  .stream()
+				  .filter(c -> c.getCity().startsWith("Mumbai"))
+				  .count();
+		System.out.println(count);
 	}
 }
 
