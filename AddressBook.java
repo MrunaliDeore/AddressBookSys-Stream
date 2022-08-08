@@ -61,6 +61,11 @@ public class AddressBook {
 		System.out.println("\nSort albhabatically by name : ");
 		slist = newContact.stream().sorted(Comparator.comparing(Contacts::getFirstName)).collect(Collectors.toList());
 		slist.forEach(System.out::println);
+		
+		//sort by city
+				System.out.println("\nSort albhabatically by city : ");
+				slist = newContact.stream().sorted(Comparator.comparing(Contacts::getCity)).collect(Collectors.toList());
+				slist.forEach(System.out::println);
 	}
 }
 
