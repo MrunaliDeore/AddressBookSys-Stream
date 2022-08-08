@@ -10,6 +10,7 @@ import java.util.*;
 
 public class AddressBook {
 	private static Collection<Contacts> list;
+	private static List<Contacts> slist;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to address book system");
@@ -55,6 +56,11 @@ public class AddressBook {
 				  .filter(c -> c.getCity().startsWith("Mumbai"))
 				  .count();
 		System.out.println(count);
+		
+		//sort by name
+		System.out.println("\nSort albhabatically by name : ");
+		slist = newContact.stream().sorted(Comparator.comparing(Contacts::getFirstName)).collect(Collectors.toList());
+		slist.forEach(System.out::println);
 	}
 }
 
