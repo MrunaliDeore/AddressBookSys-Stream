@@ -14,7 +14,7 @@ public class AddressBookMain {
         Scanner sc = new Scanner(System.in);
         boolean exit = true;
         do {
-        System.out.println("Enter Your Choice :\n1) Add Contact"
+        System.out.println("Enter Your Choice :\n1) Add Multiple Contact"
         							+" \n2) Edit Contact"
         							+ "\n3) Delete Contact"
         							+ "\n4) Display Contactt"
