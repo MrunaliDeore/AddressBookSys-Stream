@@ -14,18 +14,22 @@ public class AddressBookMain {
         Scanner sc = new Scanner(System.in);
         boolean exit = true;
         do {
-        System.out.println("Enter Your Choice :\n1) Add Contact"		
-        							+ "\n2) Display Contactt"
-        							+ "\n3) Exit");
+        System.out.println("Enter Your Choice :\n1) Add Contact"
+        							+" \n2) Edit Contact"
+        							+ "\n3) Display Contactt"
+        							+ "\n4) Exit");
         int option = sc.nextInt();
             switch (option) {
                 case 1:
                     add.addContact();
-                    break;    
+                    break; 
                 case 2:
+                    add.editContact();
+                    break; 
+                case 3:
                     add.displayContacts();
                     break;
-                case 3:
+                case 4:
                     exit = false;
                 default:
                     break;
