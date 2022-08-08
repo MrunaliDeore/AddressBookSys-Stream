@@ -24,19 +24,26 @@ public class AddressBook {
 
 		//by using foreach print all list separately
 		newContact.forEach(str->System.out.println(str));
-		
+
 		//by using distinct no duplicate entry will print
 		System.out.println("\nBy using distinct - without dublicates entries : ");
 		List<Contacts> uniquelist = newContact.stream().distinct().collect(Collectors.toList());
 		uniquelist.forEach(System.out::println);
-	
-		
+
 		//search city
 		System.out.println("\nsearch by city");
 		newContact.stream()  
-        .filter(city->"Mumbai".equals(city.getCity()))   // filtering city  
-        .map(pm ->pm.city)          // fetching city  
-        .forEach(System.out::println);  // iterating city  
+		.filter(city->"Mumbai".equals(city.getCity()))   // filtering city  
+		.map(pm ->pm.city)          // fetching city  
+		.forEach(System.out::println);  // iterating city 
+
+		//search by city by view person details
+		System.out.println("\nBy using city name search person details : ");
+		Contacts person = newContact.stream()
+				.filter(city->"Pune".equals(city.getCity()))
+				.findAny()
+				.orElse(null);
+		System.out.println(person);
 	}
 }
 
