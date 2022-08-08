@@ -67,16 +67,34 @@ public class AddressBookOperations {
 
 	}
 
-	 void displayContacts(){
-	        if(list.isEmpty()){
-	            System.out.println("No contacts to display");
-	        }
-	        else {
-	            for (Contacts contact : list) {
-	                System.out.println(contact);
-	            }
-	        }
-
-	    }
+	void deleteContact(){
+		System.out.println("Enter the first name of person to delete");
+		String firstName = sc.next().toLowerCase();
+		boolean found = false;
+		for (Contacts contact : list){
+			if (firstName.equals(contact.getFirstName().toLowerCase())){
+				list.remove(contact);
+				found = true;
+				System.out.println("Contact deleted successfully");
+				break;
+			}
+		}
+		if (!found){
+			System.out.println("No contact found");
+		}
 
 	}
+
+	void displayContacts(){
+		if(list.isEmpty()){
+			System.out.println("No contacts to display");
+		}
+		else {
+			for (Contacts contact : list) {
+				System.out.println(contact);
+			}
+		}
+
+	}
+
+}
